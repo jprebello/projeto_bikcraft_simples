@@ -241,7 +241,7 @@ ul {
 
 @media(prefers-color-scheme: dark){
   :root {
-    --cor-de-fundo: #111;
+    --cor-de-fundo: #151515;
     --fundo-itens: #000;
     --cor-de-fonte: #fff;
     --cor-vantagens: rgba(255, 255, 255, 0.2);
