@@ -1,0 +1,250 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --cor-de-fundo: #f7f7f7;
+  --fundo-itens: #fff;
+  --cor-de-fonte: #000;
+  --cor-vantagens: rgba(0, 0, 0, 0.2);
+  --onda: url("./img/onda-clara.svg");
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: var(--cor-de-fundo);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.marca {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.menu {
+  margin: 4rem;
+}
+
+.menu > ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.menu > ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: var(--cor-de-fonte);
+  background-color: var(--fundo-itens);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  border: 0.125rem solid transparent;
+}
+
+.menu > ul > li > a:hover {
+  border: 0.125rem solid var(--cor-primaria);
+}
+
+.conteudo {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+.textos::before {
+  content: "";
+  width: 3.75rem;
+  height: 0.25rem;
+  background-color: var(--cor-primaria);
+  position: absolute;
+  top: 1.875rem;
+  right: -1.875rem;
+}
+
+.principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.imagem > img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  object-position: right;
+}
+
+.textos {
+  grid-column: 1;
+  display: grid;
+  align-content: center;
+  text-align: end;
+  gap: 1.5rem;
+  background-color: var(--fundo-itens);
+  padding: 2.5rem;
+  position: relative;
+  color: var(--cor-de-fonte);
+}
+
+.textos > h1 {
+  font-size: 2rem;
+}
+
+.textos > p {
+  font-size: 1.25rem;
+}
+
+.textos > .botao {
+  display: grid;
+  justify-content: end;
+}
+
+.textos > .botao > a {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--cor-primaria);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+}
+
+.textos > .botao > a:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+.vantagens {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.vantagens > h2 {
+  grid-column: 1;
+  font-size: 4rem;
+  text-align: end;
+  align-self: center;
+  padding: 2.5rem;
+  text-transform: uppercase;
+  color: var(--cor-vantagens);
+  background-image: var(--onda);
+}
+
+.vantagens > .itens {
+  grid-column: 2;
+  display: grid;
+  background-color: var(--fundo-itens);
+  align-content: center;
+  padding: 2.5rem;
+}
+
+.vantagens > .itens > .item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  padding: 1.25rem;
+  border-left: 0.25rem solid transparent;
+}
+
+.vantagens > .itens > .item > h3{
+  color: var(--cor-de-fonte);
+}
+
+.vantagens > .itens > .item > p {
+  grid-column: 2;
+  font-size: 1.25rem;
+  color: var(--cor-de-fonte);
+}
+
+.vantagens > .itens > .item:nth-child(odd) {
+  background-color: var(--cor-de-fundo);
+}
+
+.vantagens > .itens > .item:hover {
+  border-left: 0.25rem solid var(--cor-primaria);
+}
+
+.rodape > p {
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 2rem;
+  background-color: var(--fundo-itens);
+  margin-top: 3.75rem;
+  color: var(--cor-de-fonte);
+}
+
+@media (max-width: 1000px) {
+  .vantagens {
+    display: block;
+  }
+  .vantagens > h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .vantagens > h2 {
+    font-size: 3rem;
+  }
+  .principal {
+    grid-template-columns: 1fr;
+  }
+  .textos::before {
+    display: none;
+  }
+  .textos {
+    text-align: left;
+    justify-items: left;
+  }
+  .marca {
+    margin-top: 2rem;
+  }
+  .menu {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .rodape > p {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .vantagens > h2 {
+    font-size: 2rem;
+  }
+  .vantagens > .itens > .item > p {
+    font-size: 1rem;
+  }
+  .rodape > p {
+    font-size: 1rem;
+  }
+  .textos > p {
+    font-size: 1rem;
+  }
+}
+
+@media(prefers-color-scheme: dark){
+  :root {
+    --cor-de-fundo: #111;
+    --fundo-itens: #000;
+    --cor-de-fonte: #fff;
+    --cor-vantagens: rgba(255, 255, 255, 0.2);
+    --onda: url("./img/onda-escura.svg")
+  }
+}
